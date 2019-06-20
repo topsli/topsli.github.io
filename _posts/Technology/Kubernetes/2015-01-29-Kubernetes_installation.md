@@ -342,6 +342,6 @@ This component is used to manage container deployments. It ensures that the cont
 [CoreOS clustering ]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean
 [CoreOS clustering guide]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean
 [How To Install and Configure Kubernetes on top of a CoreOS Cluster]: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-kubernetes-on-top-of-a-coreos-cluster
-[http://qiankunli.github.io/ ]: http://qiankunli.github.io/ 
-[qiankun.li@qq.com]: qiankun.li@qq.com
+[http://topsli.github.io/ ]: http://topsli.github.io/ 
+[270235378@qq.com]: 270235378@qq.com
 [dockerpool]: http://www.dockerpool.com/

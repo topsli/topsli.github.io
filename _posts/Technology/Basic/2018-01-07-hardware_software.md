@@ -17,7 +17,7 @@ keywords: Permission
 
 国外一个大牛的博客 [Mechanical Sympathy](https://mechanical-sympathy.blogspot.com/) Hardware and software working together in harmony 讲的是底层硬件是如何运作的，以及与其协作而非相悖的编程方式。[剖析Disruptor:为什么会这么快？（二）神奇的缓存行填充](http://ifeve.com/disruptor-cacheline-padding/) 作为一个开发者你可以逃避不去了解CPU、数据结构或者大O符号 —— 而我用了10年的职业生涯来忘记这些东西。但是现在看来，如果你知道这些知识并应用它，你能写出一些非常巧妙和非常快速的代码。
 
-2019.4.12 补充：[进程管理信息数据结构](http://qiankunli.github.io/2017/02/14/linux_art_review.html) 二进制文件分段 ==> 进程分段 ==> 指令操作码/操作数 ==> cpu运算单元/数据单元 ==>  cpu代码段寄存器/数据段寄存器/堆栈段寄存器等，从这个视角看，又有一种软硬件融合的味道。
+2019.4.12 补充：[进程管理信息数据结构](http://topsli.github.io/2017/02/14/linux_art_review.html) 二进制文件分段 ==> 进程分段 ==> 指令操作码/操作数 ==> cpu运算单元/数据单元 ==>  cpu代码段寄存器/数据段寄存器/堆栈段寄存器等，从这个视角看，又有一种软硬件融合的味道。
 
 ## 为什么需要反码和补码
 
@@ -94,16 +94,16 @@ cpu和内存的速度差异 ==> 缓存 ==> 多级缓存 ==> Cache是由很多个
 因此，缓存行中的64byte 数据，一个失效全失效，有时会带来一些性能问题。
 
 [JVM4——《深入拆解java 虚拟机》笔记
-2018年07月20日](http://qiankunli.github.io/2018/07/20/jvm_note.html)因为 缓存行，jvm 使用了字段内存对齐机制。
+2018年07月20日](http://topsli.github.io/2018/07/20/jvm_note.html)因为 缓存行，jvm 使用了字段内存对齐机制。
 
 volatile 字段和缓存行也有一番故事
 
 ### 多级缓存带来的问题
 
-1. 所谓线程 安全，最后可以归结到 并发读写 问题。参见 [多线程](http://qiankunli.github.io/2014/10/09/Threads.html)
-2. 所谓数据结构，最后可以归结到 读写效率的 权衡问题。 参见[hbase 泛谈](http://qiankunli.github.io/2018/04/08/hbase.html) 数据信息 和 结构信息（提高读写效率）混在一起，因为磁盘的缘故， 顺序写即可提高读效率。而查询/读效率 的提高花活儿就比较多了，并且通常 会降低写效率。 
+1. 所谓线程 安全，最后可以归结到 并发读写 问题。参见 [多线程](http://topsli.github.io/2014/10/09/Threads.html)
+2. 所谓数据结构，最后可以归结到 读写效率的 权衡问题。 参见[hbase 泛谈](http://topsli.github.io/2018/04/08/hbase.html) 数据信息 和 结构信息（提高读写效率）混在一起，因为磁盘的缘故， 顺序写即可提高读效率。而查询/读效率 的提高花活儿就比较多了，并且通常 会降低写效率。 
 
-[基于共享内存的数据通信问题](http://qiankunli.github.io/2014/10/09/Threads.html)从某种视角来看，共享内存模型下的并发问题都是“共享内存，但不共享寄存器/L1/L2缓存”导致的。
+[基于共享内存的数据通信问题](http://topsli.github.io/2014/10/09/Threads.html)从某种视角来看，共享内存模型下的并发问题都是“共享内存，但不共享寄存器/L1/L2缓存”导致的。
 
 ### 多级缓存问题的部分解决——内存屏障
 

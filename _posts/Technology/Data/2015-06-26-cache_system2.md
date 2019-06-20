@@ -10,7 +10,7 @@ keywords: 缓存 redis
 
 ## 简介
 
-建议看下前文[缓存系统](http://qiankunli.github.io/2015/06/26/cache_system.html)
+建议看下前文[缓存系统](http://topsli.github.io/2015/06/26/cache_system.html)
 
 [缓存那些事](https://tech.meituan.com/cache_about.html)
 
@@ -178,7 +178,7 @@ If you want to schedule regular cache maintenance for a cache which only rarely 
 
 位于站点和用户之间
 
-[看不见摸不着的cdn是啥](http://qiankunli.github.io/2018/03/29/cdn.html)
+[看不见摸不着的cdn是啥](http://topsli.github.io/2018/03/29/cdn.html)
 
 ## 引用
 

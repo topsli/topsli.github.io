@@ -163,7 +163,7 @@ chain.doFilter 就是一个内部递归，只是分散在了两个对象上执�
 
 ## 线程池
 
-[多线程](http://qiankunli.github.io/2014/10/09/Threads.html)
+[多线程](http://topsli.github.io/2014/10/09/Threads.html)
 
 1. HttpProcessor 会被封装成 runnable 交給Executor 执行。 **所以，所谓丢弃 连接，或者服务端执行 超时，都要从线程池 提交任务 这个事情来理解**
 2. 线程池的核心 就两个事儿：核心线程数、等待队列。因此，tomcat中 也会对应有 最小线程数、最大线程数、队列长度（tomcat 中叫acceptCount）等配置。可见，tomcat 某一个时刻能处理的最大请求数 由最大线程数 + 队列长度 决定的。

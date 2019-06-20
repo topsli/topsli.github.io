@@ -28,7 +28,7 @@ apollo-client 的主要包括以下几个部分：
 
 这么多功能，我要实现的话，都不知到从何入手，这也是分析其实现的动力所在。
 
-以前crud代码写太多了，通过对源码的学习，笔者对面向对象设计有一定认识，参见[面向对象设计](http://qiankunli.github.io/2018/10/01/object_oriented.html)
+以前crud代码写太多了，通过对源码的学习，笔者对面向对象设计有一定认识，参见[面向对象设计](http://topsli.github.io/2018/10/01/object_oriented.html)
 
 ## 类图分析
 

@@ -57,9 +57,9 @@ keywords: linux 进程调度
 ||完全由内核实现|由内核态和用户态合作完成<br>相当一部分逻辑由glibc库函数pthread_create来做|
 |数据结构||内核态struct task_struct <br>用户态 struct pthread|
 
-[线程创建的成本](http://qiankunli.github.io/2014/10/09/Threads.html)
+[线程创建的成本](http://topsli.github.io/2014/10/09/Threads.html)
 
-[线程切换的成本](http://qiankunli.github.io/2018/01/07/hardware_software.html)
+[线程切换的成本](http://topsli.github.io/2018/01/07/hardware_software.html)
 
 
 

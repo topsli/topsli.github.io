@@ -28,7 +28,14 @@ keywords: Docker,macvlan
 
 ## 几个小目标
 
-1. 业务之间不互相干扰	* 一个项目/war一虚拟机/容器   * Ip-pert-task2. 容器之间、容器与物理机之间可以互通3. 容器编排：健康检查、容器调度等4. 使用方式：通过yaml/json来描述任务，通过api部署
+1. 业务之间不互相干扰
+
+	* 一个项目/war一虚拟机/容器
+   * Ip-pert-task
+
+2. 容器之间、容器与物理机之间可以互通
+3. 容器编排：健康检查、容器调度等
+4. 使用方式：通过yaml/json来描述任务，通过api部署
 
 
 ||网段|对外抽象|
@@ -56,7 +63,7 @@ keywords: Docker,macvlan
 2. 效率高
 3. 我们就是想将容器“当成”虚拟机用，容器之间互通就行，不需要支持复杂的网络伸缩、隔离、安全等策略。
 
-关于macvlan，这涉及到lan ==> vlan => macvlan 的发展过程，请读者自行了解。网络部分参见[docker macvlan实践](http://qiankunli.github.io/2017/01/13/docker_macvlan.html)
+关于macvlan，这涉及到lan ==> vlan => macvlan 的发展过程，请读者自行了解。网络部分参见[docker macvlan实践](http://topsli.github.io/2017/01/13/docker_macvlan.html)
 
 ip分配问题
 
@@ -146,7 +153,7 @@ docker镜像的实践主要涉及到以下问题：
 	* 既然重启后，ip会改变，就减少容器重启
 	* 服务与ip绑定（这个方案非常不优雅）
 
-对于web服务，ip的变化导致要经常更改nginx配置，为此，我们专门改写了一个nginx插件来解决这个问题。参见一个大牛的工具[weibocom/nginx-upsync-module](https://github.com/weibocom/nginx-upsync-module)，我为大牛的工具新增了zk支持，参见[qiankunli/nginx-upsync-module-zk](https://github.com/qiankunli/nginx-upsync-module-zk)
+对于web服务，ip的变化导致要经常更改nginx配置，为此，我们专门改写了一个nginx插件来解决这个问题。参见一个大牛的工具[weibocom/nginx-upsync-module](https://github.com/weibocom/nginx-upsync-module)，我为大牛的工具新增了zk支持，参见[topsli/nginx-upsync-module-zk](https://github.com/topsli/nginx-upsync-module-zk)
 
 对于rpc服务，我司有自己独立开发的服务治理系统，实现服务注册和发现。但该系统有审核机制，系统认为服务部署在新的机器上时（通过ip识别新机器）应先审核才能对外使用。我们和开发同学协调，在服务上线时，进行额外处理来屏蔽掉这个问题。遗憾的是，对于跨语言调用，因为rpc客户端不通用，仍有很多不便。
 

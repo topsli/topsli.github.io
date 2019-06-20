@@ -189,7 +189,7 @@ keywords: Docker jenkins python
 
 ## 小结
 
-脚本的shell版本和python版本可在`git@github.com:qiankunli/dockerci.git`中下载。
+脚本的shell版本和python版本可在`git@github.com:topsli/dockerci.git`中下载。
 
 代码中，为了可读性加了许多注释，代码本身还是比较简单的。
 

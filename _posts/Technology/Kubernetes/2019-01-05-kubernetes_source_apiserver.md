@@ -14,7 +14,7 @@ keywords: kubernetes 源码分析
 {:toc}
 
 
-建议先看下前文 [Kubernetes源码分析——从kubectl开始](http://qiankunli.github.io/2018/12/23/kubernetes_source_kubectl.html)
+建议先看下前文 [Kubernetes源码分析——从kubectl开始](http://topsli.github.io/2018/12/23/kubernetes_source_kubectl.html)
 
 背景知识
 
@@ -36,7 +36,7 @@ keywords: kubernetes 源码分析
 	|描述任务|期望目标 desired state|如何做： command|
 	|执行器|根据  desired state 决定自己的行为<br>通常用到控制器模式|直接执行 command|
 	
-**命令式api 描述和执行 是一体的，声明式api 则需要额外的 执行器**（下文叫Controller） sync desired state 和 real state。declarative API 的感觉也可以参见 [ansible 学习](http://qiankunli.github.io/2018/12/29/ansible.html) ，Controller 有点像 ansible 中的module
+**命令式api 描述和执行 是一体的，声明式api 则需要额外的 执行器**（下文叫Controller） sync desired state 和 real state。declarative API 的感觉也可以参见 [ansible 学习](http://topsli.github.io/2018/12/29/ansible.html) ，Controller 有点像 ansible 中的module
 
 声明式API 有以下优势
 
@@ -49,7 +49,7 @@ keywords: kubernetes 源码分析
 
 ### 重新理解API Server
 
-在[Kubernetes源码分析——从kubectl开始](http://qiankunli.github.io/2018/12/23/kubernetes_source_kubectl.html) [Kubernetes源码分析——kubelet](http://qiankunli.github.io/2018/12/31/kubernetes_source_kubelet.html)系列博客中，笔者都是以创建pod 为主线来学习k8s 源码。 在学习api server 之初，笔者想当然的认为 `kubectl create -f xxpod.yaml` 发出http 请求，apiserver 收到请求，然后有一个PodHandler的东西处理相关逻辑， 比如将信息保存在etcd 上。结果http.server 启动部分都正常，但PodHandler 愣是没找到。k8s apiserver 刷新了笔者对http.server 开发的认知。
+在[Kubernetes源码分析——从kubectl开始](http://topsli.github.io/2018/12/23/kubernetes_source_kubectl.html) [Kubernetes源码分析——kubelet](http://topsli.github.io/2018/12/31/kubernetes_source_kubelet.html)系列博客中，笔者都是以创建pod 为主线来学习k8s 源码。 在学习api server 之初，笔者想当然的认为 `kubectl create -f xxpod.yaml` 发出http 请求，apiserver 收到请求，然后有一个PodHandler的东西处理相关逻辑， 比如将信息保存在etcd 上。结果http.server 启动部分都正常，但PodHandler 愣是没找到。k8s apiserver 刷新了笔者对http.server 开发的认知。
 
 1. apiserver 将resource/kubernetes object 数据保存在etcd 上，因为resource 通过etcd 持久化的操作模式比较固定，一个通用http.Handler 根据resource 元数据 即可完成 crud，无需专门的PodHandler/ServiceHandler 等
 2. **apiserver 也不单是built-in resource的api server，是一个通用api server**，这也是为何相关的struct 叫 GenericAPIServer。类比到 spring mvc 领域是什么感觉呢？ 就是你定义一个user.yaml，dynamic registry user.yaml 到 apiserver上，然后就可以直接 `http://apiserver/api/users` 返回所有User 数据了。

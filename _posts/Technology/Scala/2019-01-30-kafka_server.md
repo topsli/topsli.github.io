@@ -13,7 +13,7 @@ keywords: Scala  akka
 * TOC
 {:toc}
 
-建议先阅读下[《Apache Kafka源码分析》——Producer与Consumer](http://qiankunli.github.io/2017/12/08/kafka_clients.html)
+建议先阅读下[《Apache Kafka源码分析》——Producer与Consumer](http://topsli.github.io/2017/12/08/kafka_clients.html)
 
 服务端网络开发的基本套路
 
@@ -31,7 +31,7 @@ keywords: Scala  akka
 
 kafka client (producer/consumer) 与kafka server通信时使用自定义的协议，一个线程 一个selector 裸调java NIO 进行网络通信。 
 
-面对高并发、低延迟的需求，kafka 服务端使用了多线程+多selector ，参见[java nio的多线程扩展](http://qiankunli.github.io/2015/06/19/java_nio_2.html)
+面对高并发、低延迟的需求，kafka 服务端使用了多线程+多selector ，参见[java nio的多线程扩展](http://topsli.github.io/2015/06/19/java_nio_2.html)
 
 ![](/public/upload/netty/kafka_server_nio.jpg)
 
@@ -88,7 +88,7 @@ kafka 服务端核心是 KafkaServer，KafkaServer 没什么特别的，聚合�
 2. 如果文件较大，为加快读写速度，还要考虑读写索引文件
 3. 内存是否需要缓存热点磁盘数据
 
-建议和mysql 对比学习下  [《mysql技术内幕》笔记1](http://qiankunli.github.io/2017/10/31/inside_mysql1.html)
+建议和mysql 对比学习下  [《mysql技术内幕》笔记1](http://topsli.github.io/2017/10/31/inside_mysql1.html)
 
 |逻辑概念|对应的物理概念|备注|
 |---|---|---|
@@ -162,7 +162,7 @@ producer面对的是一个broker集群，这个meta信息找哪个broker要都�
 
 [声明式编程范式初探](http://www.nowamagic.net/academy/detail/1220525)命令式编程中的变量本质上是抽象化的内存，变量值是该内存的储存内容。JVM 线程通信 靠共享内存，反映在代码上 就是共享对象。
 
-[源码分析体会](http://qiankunli.github.io/2019/01/24/source_parse.html)任何一个系统的设计都有功能和性能（泛化一下就是功能性和非功能性） 两个部分，识别系统模块属于哪个部分，有助于简化对系统的认识。通常，一个系统的最早版本只专注于功能，后续除非大的变动，后来的演化大部分都是为了性能上的追求。在kafka 这块，zk的协作方式等方面的变化 有很充分的体现。
+[源码分析体会](http://topsli.github.io/2019/01/24/source_parse.html)任何一个系统的设计都有功能和性能（泛化一下就是功能性和非功能性） 两个部分，识别系统模块属于哪个部分，有助于简化对系统的认识。通常，一个系统的最早版本只专注于功能，后续除非大的变动，后来的演化大部分都是为了性能上的追求。在kafka 这块，zk的协作方式等方面的变化 有很充分的体现。
 
 
 

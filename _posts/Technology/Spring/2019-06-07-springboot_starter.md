@@ -23,7 +23,7 @@ keywords: springboot
 
 ![](/public/upload/spring/spring_boot_class_diagram.png)
 
-建议先阅读下 [回头看Spring IOC](http://qiankunli.github.io/2015/06/15/spring_ioc.html) 对IOC 和 ApplicationContext 等概念有所了解。
+建议先阅读下 [回头看Spring IOC](http://topsli.github.io/2015/06/15/spring_ioc.html) 对IOC 和 ApplicationContext 等概念有所了解。
 
 ## 启动过程
 

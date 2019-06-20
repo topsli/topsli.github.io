@@ -13,7 +13,7 @@ keywords: jib
 * TOC
 {:toc}
 
-参见 [容器狂打日志怎么办？](http://qiankunli.github.io/2019/03/05/container_log.html)
+参见 [容器狂打日志怎么办？](http://topsli.github.io/2019/03/05/container_log.html)
 
 
 ## kubernetes 日志

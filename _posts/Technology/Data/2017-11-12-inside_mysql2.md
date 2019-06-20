@@ -19,7 +19,7 @@ keywords: mysql innodb
 
 ### 红黑树
 
-[二叉树的演化逻辑](http://qiankunli.github.io/2018/09/19/beauty_of_algorithm_1.html)
+[二叉树的演化逻辑](http://topsli.github.io/2018/09/19/beauty_of_algorithm_1.html)
 
 [红黑树深入剖析及Java实现](https://tech.meituan.com/redblack-tree.html)
 

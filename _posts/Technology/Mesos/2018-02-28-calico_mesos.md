@@ -11,7 +11,7 @@ keywords: Docker, calico
 
 ## 简介
 
-本文讲述基于物理机安装 mesos 及 calico，流水账，原理思路部分的内容参见 [calico](http://qiankunli.github.io/2018/02/04/calico.html)
+本文讲述基于物理机安装 mesos 及 calico，流水账，原理思路部分的内容参见 [calico](http://topsli.github.io/2018/02/04/calico.html)
 
 
 环境描述，三台virtualbox ubuntu 16.04 虚拟机

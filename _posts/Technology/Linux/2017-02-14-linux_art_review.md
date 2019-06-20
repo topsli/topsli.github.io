@@ -14,12 +14,12 @@ keywords: network
 
 其在前言中写道：对于理解和掌握操作系统而言，真正有价值的是整体，是体系，而不是局部。
 
-现代操作系统最重要的特征——支持实时多任务，所以必然支持保护和分页。笔者在[从Go并发编程模型想到的](http://qiankunli.github.io/2017/02/04/go_concurrence.html)中也提到，我们在编写线程安全代码碰到的一切问题，本源是进程调度引发的进程执行中断。所以，**支持多任务是现代操作系统复杂性的根本原因**，也是我们理解OS大部分设计意图的出发点。直接体现在进程管理信息数据结构的设计上。
+现代操作系统最重要的特征——支持实时多任务，所以必然支持保护和分页。笔者在[从Go并发编程模型想到的](http://topsli.github.io/2017/02/04/go_concurrence.html)中也提到，我们在编写线程安全代码碰到的一切问题，本源是进程调度引发的进程执行中断。所以，**支持多任务是现代操作系统复杂性的根本原因**，也是我们理解OS大部分设计意图的出发点。直接体现在进程管理信息数据结构的设计上。
 
 2018.10.12 补充，[The Linux Kernel](https://www.tldp.org/LDP/tlk/tlk.html)，基于内核2.0.33， 当你对0.xx,1.xx 版本的内核有一定了解之后，可以尝试深入一下，了解下前人的演进思路。
 
-相关文章 [《程序员的自我修养》小结](http://qiankunli.github.io/2015/04/22/programer.html) [《趣谈Linux操作系统》笔记
-](http://qiankunli.github.io/2019/04/08/interest_linux_note.html)
+相关文章 [《程序员的自我修养》小结](http://topsli.github.io/2015/04/22/programer.html) [《趣谈Linux操作系统》笔记
+](http://topsli.github.io/2019/04/08/interest_linux_note.html)
 
 ## 进程管理信息数据结构
 
@@ -36,7 +36,7 @@ Linux0.11是一个支持多进程的现代操作系统，这就意味着，各�
 此处，笔者学到的一点是：对于进程切换，以前只考虑切换寄存器的值（即TSS数据），并没有考虑到LDTR、LDT等变化。这部分参见[GDT、GDTR、LDT、LDTR的学习
 ](http://blog.csdn.net/yeruby/article/details/39718119)
 
-进程最终是要编译成汇编程序（汇编语言到二进制没有复杂的语法解析等）来执行的，一个汇编程序由代码段、数据段和堆栈段等组成。PS：结合[硬件对软件设计的影响](http://qiankunli.github.io/2018/01/07/hardware_software.html) 又有一点软硬件融合的味道。
+进程最终是要编译成汇编程序（汇编语言到二进制没有复杂的语法解析等）来执行的，一个汇编程序由代码段、数据段和堆栈段等组成。PS：结合[硬件对软件设计的影响](http://topsli.github.io/2018/01/07/hardware_software.html) 又有一点软硬件融合的味道。
 
 ||硬件的支持（从上到下为新增）|数据结构支持（要硬件参与解析）|执行步骤|备注|
 |---|---|---|---|---|
@@ -50,7 +50,7 @@ Linux0.11是一个支持多进程的现代操作系统，这就意味着，各�
 2. 知道了GDT等是干什么的，就可以顺畅的分析OS启动时为什么要初始化GDT，OS进程初始化时，为什么要设置LDT。
 
 
-[Java和操作系统交互细节](https://mp.weixin.qq.com/s/fmS7FtVyd7KReebKzxzKvQ) [硬件对软件设计的影响](http://qiankunli.github.io/2018/01/07/hardware_software.html)
+[Java和操作系统交互细节](https://mp.weixin.qq.com/s/fmS7FtVyd7KReebKzxzKvQ) [硬件对软件设计的影响](http://topsli.github.io/2018/01/07/hardware_software.html)
 
 ![](/public/upload/linux/cpu_work.jpeg)
 
@@ -134,7 +134,7 @@ init/main.c
 2. 理解了进程管理信息数据结构、保护模式这一套理念后，就可以理解汇编程序(bootsect.s,setup.s,head.s)的大部分工作意图。**书中P40的两个问题非常有价值**：为什么没有最先调用main函数？为什么加载工作完成后，仍然没有执行main函数，而是打开A20、pe和pg，建立IDT和GDT...，然后才开始执行main函数？
 3. 启动过程就是不停向上抽象的过程。比如，一开始只能通过汇编物理地址访问外设，后来可以文件形式访问外设；一开始用BIOS默认的中断体系，当OS自己的中断体系建立后，就可以软中断提供系统调用。
 
-2019.4.22补充：其实你看C系[Redis源码分析](http://qiankunli.github.io/2019/04/20/redis_source.html) 也是类似，先初始化domain内的各种抽象，然后开始干活，只是linux 的各种“抽象”偏硬件。
+2019.4.22补充：其实你看C系[Redis源码分析](http://topsli.github.io/2019/04/20/redis_source.html) 也是类似，先初始化domain内的各种抽象，然后开始干活，只是linux 的各种“抽象”偏硬件。
 
 	redis.c
 	int main(int argc, char **argv) {

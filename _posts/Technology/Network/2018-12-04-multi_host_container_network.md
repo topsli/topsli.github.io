@@ -15,11 +15,11 @@ keywords: container network
 
 阅读本文前，建议事先了解下
 
-[程序猿视角看网络](http://qiankunli.github.io/2018/03/08/network.html)
+[程序猿视角看网络](http://topsli.github.io/2018/03/08/network.html)
 
-[《深入剖析kubernetes》笔记](http://qiankunli.github.io/2018/08/26/parse_kubernetes_note.html)
+[《深入剖析kubernetes》笔记](http://topsli.github.io/2018/08/26/parse_kubernetes_note.html)
 
-[《Container-Networking-Docker-Kubernetes》笔记](http://qiankunli.github.io/2018/10/11/docker_to_k8s_network_note.html)
+[《Container-Networking-Docker-Kubernetes》笔记](http://topsli.github.io/2018/10/11/docker_to_k8s_network_note.html)
 
 
 ## 计算机发送数据包的基本过程
@@ -82,7 +82,7 @@ keywords: container network
 </tr>
 </table>
 
-[程序猿视角看网络](http://qiankunli.github.io/2018/03/08/network.html)提到：在一个网络数据包传输的过程中（跨网络+路由器），都是源/目标mac在变，源/目标ip都没变。
+[程序猿视角看网络](http://topsli.github.io/2018/03/08/network.html)提到：在一个网络数据包传输的过程中（跨网络+路由器），都是源/目标mac在变，源/目标ip都没变。
 
 ## 跨主机通信
 
@@ -97,12 +97,12 @@ there are two ways for Containers or VMs to communicate to each other.
 
 ### overlay 网络
 
-建议参考下[《Container-Networking-Docker-Kubernetes》笔记](http://qiankunli.github.io/2018/10/11/docker_to_k8s_network_note.html) 一起学习
+建议参考下[《Container-Networking-Docker-Kubernetes》笔记](http://topsli.github.io/2018/10/11/docker_to_k8s_network_note.html) 一起学习
 
 Flannel 支持三种后端实现，分别是： VXLAN；host-gw； UDP。而 UDP 模式，是 Flannel 项目最早支持的一种方式，却也是性能最差的一种方式。所以，这个模式目前已经被弃用。
 
 我们在进行系统级编程的时候，有一个非常重要的优化原则，**就是要减少用户态到内核态的切换次数，并且把核心的处理逻辑都放在内核态进行**。这也是为什么，Flannel 后来支持的VXLAN 模式，逐渐成为了主流的容器网络方案的原因。用户态内核态的切换成本参见 [
-os->c->java 多线程](http://qiankunli.github.io/2014/10/09/Threads.html)
+os->c->java 多线程](http://topsli.github.io/2014/10/09/Threads.html)
 
 **Network是一组可以相互通信的Endpoints，网络提供connectivity and discoverability（这句话是容器网络的纲，纲举目张）.** ip/mac 不是物理机独有的，主机内网络配置 （网卡 + iptables + 路由表 ）加上网关，加上协议，就可以进行网络通信。
 

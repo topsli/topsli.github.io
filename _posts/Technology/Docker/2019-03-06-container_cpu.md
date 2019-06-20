@@ -67,7 +67,7 @@ docker stats 命令输出
 1. CPU % 体现了 quota/period 值
 2. MEM USAGE / LIMIT 反映了内存占用
 3. NET I/O 反映了进出带宽
-4. BLOCK I/O 反映了磁盘带宽，The amount of data the container has read to and written from block devices on the host ，貌似是一个累计值，但可以部分反映 项目对磁盘的写程度，有助于解决[容器狂打日志怎么办？](http://qiankunli.github.io/2019/03/05/container_log.html)
+4. BLOCK I/O 反映了磁盘带宽，The amount of data the container has read to and written from block devices on the host ，貌似是一个累计值，但可以部分反映 项目对磁盘的写程度，有助于解决[容器狂打日志怎么办？](http://topsli.github.io/2019/03/05/container_log.html)
 5. PID 反映了对应的进程号，也列出了进程id 与容器id的关系。根据pid 查询容器 id `docker stats --no-stream | grep 1169`
 
 ## cpu 隔离在不同系统的不同概念

@@ -23,7 +23,7 @@ keywords: JAVA netty channel
 5. [Operating Systems: I/O Systems4. ](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/13_IOSystems.html)
 6. [多种I/O模型及其对socket效率的改进](http://mickhan.blog.51cto.com/2517040/1586370)
 
-根据这个思路，笔者整理了下相关的知识，参见[java io涉及到的一些linux知识](http://qiankunli.github.io/2017/04/16/linux_io.html)
+根据这个思路，笔者整理了下相关的知识，参见[java io涉及到的一些linux知识](http://topsli.github.io/2017/04/16/linux_io.html)
 
 服务端网络开发的基本套路
 
@@ -287,7 +287,7 @@ inbound 的被称作events， outbound 的被称作operations。
 
 整段代码都在弄一个事情：是`selector.selectNow();` 还是 `selector.select(timeoutMillis)`
 
-这段逻辑可不孤单，[Redis源码分析](http://qiankunli.github.io/2019/04/20/redis_source.html) 中的eventloop 异曲同工
+这段逻辑可不孤单，[Redis源码分析](http://topsli.github.io/2019/04/20/redis_source.html) 中的eventloop 异曲同工
 
 ## channel 以及 unsafe pipeline eventloop 三国杀
 

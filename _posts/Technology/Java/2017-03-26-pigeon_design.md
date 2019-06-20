@@ -12,7 +12,7 @@ keywords: JAVA netty transport
 
 笔者最近在学习netty在框架中的使用，并顺手实现了一个基于netty的通用transport层框架pigeon，在实现的过程中碰到了一些问题，在此与大家分享。
 
-pigeon的作用，是在一个更复杂的、依赖通信框架中（比如dubbo、zk等）充当底层的数据传输角色，相关介绍参见上一篇博文[netty（六）netty在框架中的使用套路](http://qiankunli.github.io/2017/03/18/netty_in_framework.html)
+pigeon的作用，是在一个更复杂的、依赖通信框架中（比如dubbo、zk等）充当底层的数据传输角色，相关介绍参见上一篇博文[netty（六）netty在框架中的使用套路](http://topsli.github.io/2017/03/18/netty_in_framework.html)
 
 ## 心跳机制的实现
 

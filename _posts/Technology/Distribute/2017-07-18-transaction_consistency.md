@@ -13,7 +13,7 @@ keywords: 分布式事务
 * TOC
 {:toc}
 
-事务一致性属于 一致性问题的一种(另一种是副本一致性)，建议先看下 [串一串一致性协议](http://qiankunli.github.io/2018/09/27/consistency_protocol.html)
+事务一致性属于 一致性问题的一种(另一种是副本一致性)，建议先看下 [串一串一致性协议](http://topsli.github.io/2018/09/27/consistency_protocol.html)
 
 在实际的业务中，分布式事务有以下表现形式：
 
@@ -40,7 +40,7 @@ keywords: 分布式事务
 
 [一致性协议](http://www.cnblogs.com/xrq730/p/4992198.html)
 
-[JTA与TCC](http://qiankunli.github.io/2016/05/21/tcc.html)
+[JTA与TCC](http://topsli.github.io/2016/05/21/tcc.html)
 
 ### 过程
 
@@ -104,7 +104,7 @@ keywords: 分布式事务
 	     userTx.rollback();
 	}
 	
-代码的封装跟2pc的实际执行过程有所不同，可以参见[JTA与TCC](http://qiankunli.github.io/2016/05/21/tcc.html)
+代码的封装跟2pc的实际执行过程有所不同，可以参见[JTA与TCC](http://topsli.github.io/2016/05/21/tcc.html)
 
 
 ## TCC

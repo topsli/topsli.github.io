@@ -34,7 +34,7 @@ keywords: groovy
 
 ## 传统队列
 
-[Lock-Free Queue](http://qiankunli.github.io/2018/10/15/lock_free.html)
+[Lock-Free Queue](http://topsli.github.io/2018/10/15/lock_free.html)
 
 ## synchronized
 
@@ -42,7 +42,7 @@ keywords: groovy
 
 ## AQS 的排队方式
 
-[AQS4——论文学习](http://qiankunli.github.io/2018/06/05/aqs3.html)
+[AQS4——论文学习](http://topsli.github.io/2018/06/05/aqs3.html)
 
 [JUC lock - AQS - CLH queue](https://programmer.help/blogs/04.juc-lock-aqs-clh-queue.html)
 

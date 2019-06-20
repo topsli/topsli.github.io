@@ -21,7 +21,7 @@ A Pod specifies which Volumes its containers need in its ContainerManifest prope
 
 The storage media (Disk, SSD, or memory) of a volume is determined by the media of the filesystem holding the kubelet root dir (typically `/var/lib/kubelet`)(volumn的存储类型（硬盘，固态硬盘等）是由kubelet所在的目录决定的). There is no limit on how much space an EmptyDir or PersistentDir volume can consume（大小也是没有限制的）, and no isolation between containers or between pods.
 
-可以与 [docker volume](http://qiankunli.github.io/2015/09/24/docker_volume.html) 对比下异同
+可以与 [docker volume](http://topsli.github.io/2015/09/24/docker_volume.html) 对比下异同
 
 ## Persistent Volume（PV）和 Persistent Volume Claim（PVC）
 

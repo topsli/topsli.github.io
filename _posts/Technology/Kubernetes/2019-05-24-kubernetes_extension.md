@@ -15,7 +15,7 @@ keywords: kubernetes crd
 
 ## CRD
 
-建议先查看[Kubernetes 控制器模型](http://qiankunli.github.io/2019/03/07/kubernetes_controller.html)
+建议先查看[Kubernetes 控制器模型](http://topsli.github.io/2019/03/07/kubernetes_controller.html)
 
 ### Custom Resource
 
@@ -55,7 +55,7 @@ Spring 提供了扩展 xml 的机制，用来编写自定义的 xml bean ，例�
 两相对比，还是很有味道的。
 
 
-在nginx 中，你可以自定义 指令。比如笔者实现过一个 upsync 指令[qiankunli/nginx-upsync-module-zk](https://github.com/qiankunli/nginx-upsync-module-zk) ，在nginx conf 中出现 upsync 指令时可以执行笔者的自定义逻辑。但自定义的指令 要和nginx 重新编译后 才可以生效，api server 可以不重启  支持 `/api/v1/namespaces/{namespace}/pod2s/{name}` 么？
+在nginx 中，你可以自定义 指令。比如笔者实现过一个 upsync 指令[topsli/nginx-upsync-module-zk](https://github.com/topsli/nginx-upsync-module-zk) ，在nginx conf 中出现 upsync 指令时可以执行笔者的自定义逻辑。但自定义的指令 要和nginx 重新编译后 才可以生效，api server 可以不重启  支持 `/api/v1/namespaces/{namespace}/pod2s/{name}` 么？
 
 ### Custom controllers
 
@@ -162,7 +162,7 @@ pod2 资源类型在服务器端的注册的工作，APIServer 会自动帮我�
 
 ## 实操——Ingress（未完成）
 
-Ingress 背景及作用参见[访问Kubernetes上的服务](http://qiankunli.github.io/2015/03/04/kubernetes_service.html)
+Ingress 背景及作用参见[访问Kubernetes上的服务](http://topsli.github.io/2015/03/04/kubernetes_service.html)
 
 [Kubernetes Ingress（2）Controller源码分析](http://shareinto.github.io/2017/04/13/KubernetesIngress(2)/)未理解
 

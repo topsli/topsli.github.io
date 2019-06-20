@@ -205,6 +205,6 @@ Discovery方式需要用到etcd官方的Discovery服务，当然，我们也可�
 [box文件]: http://storage.core-os.net/coreos/amd64-usr/alpha/coreos_production_vagrant.box
 [http://wiselyman.iteye.com/blog/2152167]: http://wiselyman.iteye.com/blog/2152167
 [http://www.infoq.com/cn/articles/coreos-analyse-etcd]: http://www.infoq.com/cn/articles/coreos-analyse-etcd
-[http://qiankunli.github.io/]: http://qiankunli.github.io/
-[qiankun.li@qq.com]: qiankun.li@qq.com
+[http://topsli.github.io/]: http://topsli.github.io/
+[270235378@qq.com]: 270235378@qq.com
 [dockerpool]: http://www.dockerpool.com/

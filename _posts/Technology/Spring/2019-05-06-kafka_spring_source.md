@@ -17,7 +17,7 @@ keywords: kafka
 
 官网地址 [Spring for Apache Kafka](https://spring.io/projects/spring-kafka)
 
-spring 对框架的封装 套路很一致，参见 [spring redis 源码分析](http://qiankunli.github.io/2019/05/09/spring_jedis_source.html) 以及 spring 对rabbitmq 的代码。
+spring 对框架的封装 套路很一致，参见 [spring redis 源码分析](http://topsli.github.io/2019/05/09/spring_jedis_source.html) 以及 spring 对rabbitmq 的代码。
 
 ## 代码示例
 
@@ -112,7 +112,7 @@ kafka-consumer.xml
 
 ![](/public/upload/spring/spring_kafka_producer_class_diagram.png)
 
-1. 相对于 [《Apache Kafka源码分析》——Producer与Consumer](http://qiankunli.github.io/2017/12/08/kafka_learn_1.html)直接使用KafkaProducer， DefaultKafkaProducerFactory 典型的工厂模式， 封装了kafka producer 配置
+1. 相对于 [《Apache Kafka源码分析》——Producer与Consumer](http://topsli.github.io/2017/12/08/kafka_learn_1.html)直接使用KafkaProducer， DefaultKafkaProducerFactory 典型的工厂模式， 封装了kafka producer 配置
 2. KafkaTemplate 来了一个 经典的单例模式
 
         public class KafkaTemplate<K, V> implements KafkaOperations<K, V> {

@@ -18,12 +18,12 @@ keywords: Docker,macvlan
 
 ## docker的应用路线图
 
-笔者在 [测试环境docker化实践](http://qiankunli.github.io/2017/03/29/docker_test_environment_practice.html) 提到了测试环境运行docker化的一些实践，一年多以来，对docker以及 docker实施有了很多新的认识：
+笔者在 [测试环境docker化实践](http://topsli.github.io/2017/03/29/docker_test_environment_practice.html) 提到了测试环境运行docker化的一些实践，一年多以来，对docker以及 docker实施有了很多新的认识：
 
 1. docker 本身的落地 涉及到 网络、编排工具选型 等问题，这个问题在18年已经逐步成熟并清晰。
 2. 仅仅是在一个集群上搭建和运行docker/k8s 等，还是非常初级的。因为docker/k8s层是一个PaaS层的东西，不可能动了这一层而开发等无感知，要下大力气屏蔽掉变化，减少对开发的影响。推广容器平台从某种程度上讲，自身是一个ToB的业务。你不仅要能用，还得好用，这个好用体现在
 
-	* 要形成一个完整的持续交付体系 [docker环境下的持续构建](http://qiankunli.github.io/2018/11/18/ci_in_docker.html) 以及 [docker环境下的持续发布](http://qiankunli.github.io/2018/11/18/cd_in_docker.html)
+	* 要形成一个完整的持续交付体系 [docker环境下的持续构建](http://topsli.github.io/2018/11/18/ci_in_docker.html) 以及 [docker环境下的持续发布](http://topsli.github.io/2018/11/18/cd_in_docker.html)
 	* 对开发同学的友好性 
 	* 与现有基础设施的兼容性
 
@@ -45,11 +45,11 @@ keywords: Docker,macvlan
 
 ### docker 与 java的亲和性
 
-[docker 环境（主要运行java项目）常见问题](http://qiankunli.github.io/2017/08/25/docker_debug.html)
+[docker 环境（主要运行java项目）常见问题](http://topsli.github.io/2017/08/25/docker_debug.html)
 
 ### docker build 比较慢
 
-[docker环境下的持续构建](http://qiankunli.github.io/2018/11/18/ci_in_docker.html) 
+[docker环境下的持续构建](http://topsli.github.io/2018/11/18/ci_in_docker.html) 
  
 ### io隔离性
 
@@ -100,7 +100,7 @@ keywords: Docker,macvlan
 [美团点评Docker容器管理平台](https://mp.weixin.qq.com/s?__biz=MjM5NjQ5MTI5OA==&mid=2651746030&idx=3&sn=f0c97665bb35aca7bc054e9d230baae7&chksm=bd12b7a38a653eb5aca4ca366abee24bad89d1bfab9031e5bf859d15f38d92d6d0755beca225&scene=21#wechat_redirect)
 
 
-1. 一个容器除运行服务外，还需要运行多个旁路系统 [一个容器多个进程](http://qiankunli.github.io/2018/11/06/multi_process_per_container.html)
+1. 一个容器除运行服务外，还需要运行多个旁路系统 [一个容器多个进程](http://topsli.github.io/2018/11/06/multi_process_per_container.html)
 2. 对日志采集的兼容
 
 

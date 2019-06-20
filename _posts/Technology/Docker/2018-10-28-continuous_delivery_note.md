@@ -15,7 +15,7 @@ keywords: 持续交付
 * TOC
 {:toc}
 
-很多话题 [研发效能平台](http://qiankunli.github.io/2018/10/15/r&d_efficiency.html) 也有阐述。
+很多话题 [研发效能平台](http://topsli.github.io/2018/10/15/r&d_efficiency.html) 也有阐述。
 
 ## 持续交付的“三观”
 

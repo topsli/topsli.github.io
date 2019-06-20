@@ -124,7 +124,7 @@ public static Marathon getInstance(String endpoint, RequestInterceptor... interc
 
 ## 类似场景对比
 
-[我们能用反射做什么](http://qiankunli.github.io/2018/01/23/reflect.html) 提到： **dynamic proxies 总让人跟代理模式扯上关系，但实际上说dynamic interface implementations 更为直观。**
+[我们能用反射做什么](http://topsli.github.io/2018/01/23/reflect.html) 提到： **dynamic proxies 总让人跟代理模式扯上关系，但实际上说dynamic interface implementations 更为直观。**
 
 
 ### 自定义spring namespace handler

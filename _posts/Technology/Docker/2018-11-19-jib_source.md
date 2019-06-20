@@ -13,7 +13,7 @@ keywords: jib
 * TOC
 {:toc}
 
-阅读本文前，建议事先了解下 [docker环境下的持续构建](http://qiankunli.github.io/2018/11/18/ci_in_docker.html#)
+阅读本文前，建议事先了解下 [docker环境下的持续构建](http://topsli.github.io/2018/11/18/ci_in_docker.html#)
 
 ## 基本使用
 
@@ -322,7 +322,7 @@ AsyncStep 接口官方注释：Holds the future for an asynchronously-running st
 2. StepsRunner 负责 将Step 组装在一起，并指明Step 的依赖关系（依赖关系本身与业务无关）
 3.  runnable.run 负责实际的驱动执行
 
-[系统设计的一些体会](http://qiankunli.github.io/2018/09/28/system_design.html) 提到：要分得清楚访问代码、业务代码、存储代码、胶水代码各自应在哪些层级，它们应该是什么角色。**在这里，所有Step 串行调用异步执行是本质**（异步执行有调用线程和执行线程之分，所以串行调用和异步执行不冲突，BuildSteps 和 StepsRunner 的静态构造方法和Builder 模式是访问或胶水代码，提高了可读性。
+[系统设计的一些体会](http://topsli.github.io/2018/09/28/system_design.html) 提到：要分得清楚访问代码、业务代码、存储代码、胶水代码各自应在哪些层级，它们应该是什么角色。**在这里，所有Step 串行调用异步执行是本质**（异步执行有调用线程和执行线程之分，所以串行调用和异步执行不冲突，BuildSteps 和 StepsRunner 的静态构造方法和Builder 模式是访问或胶水代码，提高了可读性。
 
 每次`new XXStep()`可以理解为另起线程 执行一个Step。就像`ExecutorService.submit(()-> System.out.println("run in new thread"))` 是一样的。
 

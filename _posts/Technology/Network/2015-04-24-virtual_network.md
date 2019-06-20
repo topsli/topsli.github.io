@@ -16,7 +16,7 @@ keywords: Docker
 
 本文介绍下Docker网络的相关知识
 
-建议看下前文 [程序猿视角看网络](http://qiankunli.github.io/2018/03/08/network.html)
+建议看下前文 [程序猿视角看网络](http://topsli.github.io/2018/03/08/network.html)
 
 相对于物理网络，虚拟化有两个方面：
 
@@ -72,7 +72,7 @@ Switching was just a fancy name for bridging, and that was a 1980s technology �
 
 [Macvlan and IPvlan basics](https://sreeninet.wordpress.com/2016/05/29/macvlan-and-ipvlan/)In linux bridge implementation, VMs or Containers will connect to bridge and bridge will connect to outside world. For external connectivity, we would need to use NAT. container 光靠 bridge 无法直接访问外网。
 
-建议看下 [docker中涉及到的一些linux知识](http://qiankunli.github.io/2016/12/02/linux_docker.html) 对网桥源码的分析。
+建议看下 [docker中涉及到的一些linux知识](http://topsli.github.io/2016/12/02/linux_docker.html) 对网桥源码的分析。
 
 ## 虚拟设备 ==> 虚拟网络
 

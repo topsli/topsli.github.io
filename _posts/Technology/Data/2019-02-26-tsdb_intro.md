@@ -13,7 +13,7 @@ keywords: tsdb
 * TOC
 {:toc}
 
-建议看下前文 [OpenTSDB 入门](http://qiankunli.github.io/2017/08/02/opentsdb.html) [influxdb 入门](http://qiankunli.github.io/2019/02/26/influxdb_intro.html)
+建议看下前文 [OpenTSDB 入门](http://topsli.github.io/2017/08/02/opentsdb.html) [influxdb 入门](http://topsli.github.io/2019/02/26/influxdb_intro.html)
 
 
 [下一代监控系统大阅兵-基于TSDB的监控系统定制开发需求调研](https://zhuanlan.zhihu.com/p/35978607)

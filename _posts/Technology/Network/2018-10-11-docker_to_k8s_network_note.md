@@ -20,7 +20,7 @@ Nginx 公司的 Michael Hausenblas 发布了一本关于 docker 和 kubernetes �
 
 **service discovery and container orchestration are two sides of the same idea.**
 
-建议先看下[程序猿视角看网络](http://qiankunli.github.io/2018/03/08/network.html)
+建议先看下[程序猿视角看网络](http://topsli.github.io/2018/03/08/network.html)
 
 ## container networking stack
 
@@ -60,7 +60,7 @@ Nginx 公司的 Michael Hausenblas 发布了一本关于 docker 和 kubernetes �
 
 ||特点|ip/mac address|从交换机的视角看vlan方案|
 |---|---|---|---|
-|vlan|A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2).<br>each sub-interface belongs to a different L2 domain using vlan |all sub-interfaces have same mac address.|交换机要支持 vlan tag,vlan 学习参见[程序猿视角看网络](http://qiankunli.github.io/2018/03/08/network.html)|
+|vlan|A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2).<br>each sub-interface belongs to a different L2 domain using vlan |all sub-interfaces have same mac address.|交换机要支持 vlan tag,vlan 学习参见[程序猿视角看网络](http://topsli.github.io/2018/03/08/network.html)|
 |Macvlan|Containers will directly get exposed in underlay network using Macvlan sub-interfaces.<br> Macvlan has 4 types(Private, VEPA, Bridge, Passthru)<br> 可以在vlan sub-interface 上创建 macvlan subinterface|Macvlan allows a single physical interface to have multiple mac and ip addresses using macvlan sub-interfaces. <br>|交换机的port一般只与一个mac绑定，使用macvlan 后必须支持绑定多个 且 无数量限制|
 |ipvlan|  ipvlan supports L2 and L3 mode.|the endpoints have the same mac address|省mac地址|
 |vxlan|Virtual Extensible LAN (VXLAN) is a network virtualization technology that attempts to address the scalability problems associated with large cloud computing deployments. <br>VXLAN endpoints, which terminate VXLAN tunnels and may be either virtual or physical switch ports, are known as VXLAN tunnel endpoints (VTEPs)||交换机无感知|
@@ -153,7 +153,7 @@ I mentioned above that rkt implements CNI. In other words, rkt uses CNI to confi
 ` 执行，要完成这样的“映射”，需要规范定义 以及 规范相关方的协作，可以从这个角度再来审视前文对CNI SPEC 的一些梳理。
 
 
-笔者以前一直有一个困惑，network、volume 可以作为一个“资源”随意配置，可以是一个json的存在，尤其是network，`docker network create ` 完了之后 就可以在`docker run -net=xx` 的时候使用。kubernetes 中更是 yaml 中声明一下network即可使用，是如何的背景支撑这样做？ 结合源码来看 [加载 CNI plugin](http://qiankunli.github.io/2018/12/31/kubernetes_source_kubelet.html) Kubelet 会根据 network.json `cmd:=exec.Command(ctx,"bridge");cmd.Run()`
+笔者以前一直有一个困惑，network、volume 可以作为一个“资源”随意配置，可以是一个json的存在，尤其是network，`docker network create ` 完了之后 就可以在`docker run -net=xx` 的时候使用。kubernetes 中更是 yaml 中声明一下network即可使用，是如何的背景支撑这样做？ 结合源码来看 [加载 CNI plugin](http://topsli.github.io/2018/12/31/kubernetes_source_kubelet.html) Kubelet 会根据 network.json `cmd:=exec.Command(ctx,"bridge");cmd.Run()`
 
 	{
 	    "cniVersion": "0.2.0",

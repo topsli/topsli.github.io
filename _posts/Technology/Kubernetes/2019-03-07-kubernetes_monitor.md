@@ -15,11 +15,11 @@ keywords: jib
 
 ## 为什么要监控
 
-参见 [容器狂打日志怎么办？](http://qiankunli.github.io/2019/03/05/container_log.html)
+参见 [容器狂打日志怎么办？](http://topsli.github.io/2019/03/05/container_log.html)
 
-[容器狂占cpu怎么办？](http://qiankunli.github.io/2019/03/06/container_cpu.html)
+[容器狂占cpu怎么办？](http://topsli.github.io/2019/03/06/container_cpu.html)
 
-参见[Prometheus 学习](http://qiankunli.github.io/2019/03/07/prometheus_intro.html)
+参见[Prometheus 学习](http://topsli.github.io/2019/03/07/prometheus_intro.html)
 
 ## 容器监控和Kubernetes监控不一样
 

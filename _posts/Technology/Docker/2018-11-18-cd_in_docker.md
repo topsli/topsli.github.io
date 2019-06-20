@@ -14,7 +14,7 @@ keywords: 持续交付
 {:toc}
 
 
-阅读前建议先看下 前文[docker环境下的持续构建](http://qiankunli.github.io/2018/11/18/ci_in_docker.html)
+阅读前建议先看下 前文[docker环境下的持续构建](http://topsli.github.io/2018/11/18/ci_in_docker.html)
 
 [流水线即代码](http://insights.thoughtworkers.org/pipeline-as-code/)具体实施过程中，考虑到项目，尤其是遗留项目当前的特点和团队成员的“产能”，我们会先将构建和部署自动化；部署节奏稳定后，开始将单元测试和代码分析自动化；接着可以指导测试人员将验收测试自动化；然后尝试将发布自动化。
 

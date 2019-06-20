@@ -15,11 +15,11 @@ keywords: jedis,spring-data-redis
 
 [Intro to Jedis – the Java Redis Client Library](https://www.baeldung.com/jedis-java-redis-client-library)
 
-阅读前建议参看 [Redis 学习](http://qiankunli.github.io/2018/06/15/redis.html) 对Redis 通信协议以及 五种数据类型有所了解
+阅读前建议参看 [Redis 学习](http://topsli.github.io/2018/06/15/redis.html) 对Redis 通信协议以及 五种数据类型有所了解
 
 ![](/public/upload/data/redis_structure_and_object.png)
 
-相关文章 [spring redis 源码分析](http://qiankunli.github.io/2019/05/09/spring_jedis_source.html)
+相关文章 [spring redis 源码分析](http://topsli.github.io/2019/05/09/spring_jedis_source.html)
 
 ## 简单实现
 
@@ -200,7 +200,7 @@ pipeline包含client成员，因此具备数据的收发能力，但在收发数
 1. Use a round robin policy to balance load to multiple codis proxies.
 2. Detect proxy online and offline automatically.
 
-从目前看，主要是解决多codis proxy 的服务发现， codis 参见[Codis源码分析](http://qiankunli.github.io/2019/04/23/codis_source.html)
+从目前看，主要是解决多codis proxy 的服务发现， codis 参见[Codis源码分析](http://topsli.github.io/2019/04/23/codis_source.html)
 
 示例代码
 

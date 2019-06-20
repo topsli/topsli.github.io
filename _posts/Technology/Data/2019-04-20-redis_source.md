@@ -13,9 +13,9 @@ keywords: Redis
 * TOC
 {:toc}
 
-建议看下前文[Redis 学习](http://qiankunli.github.io/2018/06/15/redis.html)
+建议看下前文[Redis 学习](http://topsli.github.io/2018/06/15/redis.html)
 
-参考[《Apache Kafka源码分析》——server](http://qiankunli.github.io/2019/01/30/kafka_learn_2.html)服务端网络开发的基本套路
+参考[《Apache Kafka源码分析》——server](http://topsli.github.io/2019/01/30/kafka_learn_2.html)服务端网络开发的基本套路
 
 ![](/public/upload/architecture/network_communication.png)
 
@@ -111,7 +111,7 @@ Redis的网络监听没有采用libevent等，而是自己实现了一套简单�
 			processed += processTimeEvents(eventLoop);
 	}
 
-这个event loop的逻辑可不孤单，netty中也有类似的[EventLoop 中的 Loop 到底是什么？](http://qiankunli.github.io/2017/04/14/network_channel.html)
+这个event loop的逻辑可不孤单，netty中也有类似的[EventLoop 中的 Loop 到底是什么？](http://topsli.github.io/2017/04/14/network_channel.html)
 
 Redis 中会处理两种事件：时间事件和文件事件。在每个事件循环中 Redis 都会先处理文件事件，然后再处理时间事件直到整个循环停止。 aeApiPoll 可看做文件事件的生产者（还有一部分文件事件来自accept等），processEvents 和 processTimeEvents 作为 Redis 中发生事件的消费者，每次都会从“事件池”（aeEventLoop的几个列表字段）中拉去待处理的事件进行消费。
 

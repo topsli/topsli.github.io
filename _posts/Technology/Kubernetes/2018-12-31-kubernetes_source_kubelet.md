@@ -14,7 +14,7 @@ keywords: kubernetes 源码分析
 {:toc}
 
 
-建议先看下前文 [Kubernetes源码分析——从kubectl开始](http://qiankunli.github.io/2018/12/23/kubernetes_source_kubectl.html)
+建议先看下前文 [Kubernetes源码分析——从kubectl开始](http://topsli.github.io/2018/12/23/kubernetes_source_kubectl.html)
 
 笔者不太喜欢抠细节，加上k8s 没有使用 [uber-go/dig](https://github.com/uber-go/dig) 之类的依赖注入库（很多代码 搞到最后就是 spring ioc干的活儿，但一换go的马甲，经常一下子没看出来），struct 组合代码 和 struct 行为代码耦合在一起，本文主要关注 行为代码。笔者认为，**关键不是一些结构体定义， 而是业务逻辑：怎么启动了一个pod？怎么管理pod 的等？与cni、csi 插件怎么结合？如何与docker 协同？**
 
@@ -314,7 +314,7 @@ golang中一个接口可以包含一个或多个其他的接口，这相当于�
 
 ## 加载 CNI plugin
 
-建议参看[《Container-Networking-Docker-Kubernetes》笔记](http://qiankunli.github.io/2018/10/11/docker_to_k8s_network_note.html)了解下CNI 的相关概念及使用。
+建议参看[《Container-Networking-Docker-Kubernetes》笔记](http://topsli.github.io/2018/10/11/docker_to_k8s_network_note.html)了解下CNI 的相关概念及使用。
 
 ![](/public/upload/kubernetes/kubelet_cni_init.png)
 

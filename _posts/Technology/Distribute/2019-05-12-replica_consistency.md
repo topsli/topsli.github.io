@@ -13,7 +13,7 @@ keywords: 一致性协议
 * TOC
 {:toc}
 
-建议先参见 [串一串一致性协议](http://qiankunli.github.io/2018/09/27/consistency_protocol.html) 了解下背景
+建议先参见 [串一串一致性协议](http://topsli.github.io/2018/09/27/consistency_protocol.html) 了解下背景
 
 ![](/public/upload/distribute/consistency.png)
 

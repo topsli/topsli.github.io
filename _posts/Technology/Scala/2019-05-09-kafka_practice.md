@@ -13,7 +13,7 @@ keywords: Scala  akka
 * TOC
 {:toc}
 
-建议先阅读下[《Apache Kafka源码分析》——Producer与Consumer](http://qiankunli.github.io/2017/12/08/kafka_learn_1.html)
+建议先阅读下[《Apache Kafka源码分析》——Producer与Consumer](http://topsli.github.io/2017/12/08/kafka_learn_1.html)
 
 
 ## 重新理解kafka
@@ -29,7 +29,7 @@ kafka 较新的1.0 和 2.0 也主要集中于kafka streams的改进。
 
 ### 多线程 消费
 
-从[spring kafka 源码分析](http://qiankunli.github.io/2019/05/06/kafka_spring_source.html) 可以看到， spring-kafka 仅使用了一个线程来 操作consumer 从broker 拉取消息，一个线程够用么？ 是否可以通过加线程 提高consumer的消费能力呢？
+从[spring kafka 源码分析](http://topsli.github.io/2019/05/06/kafka_spring_source.html) 可以看到， spring-kafka 仅使用了一个线程来 操作consumer 从broker 拉取消息，一个线程够用么？ 是否可以通过加线程 提高consumer的消费能力呢？
 
 
 [【原创】探讨kafka的分区数与多线程消费](https://raising.iteye.com/blog/2252456) 一个消费线程可以对应若干个分区，但**一个分区只能被一个consumer 消费 + consumer 对象是线程不安全的==> 一个分区只能被具体某一个消费线程消费**。因此，topic 的分区数必须大于一个（由server.properties 的 num.partitions 控制），否则消费端再怎么折腾，也用不了多线程。

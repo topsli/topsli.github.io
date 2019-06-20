@@ -13,7 +13,7 @@ keywords: jib
 * TOC
 {:toc}
 
-除了docker image 时间长了会占用大量磁盘空间外（参见[关于docker image的那点事儿](http://qiankunli.github.io/2015/09/22/docker_image.html)），容器在运行时大量写日志也是个很头疼的问题。
+除了docker image 时间长了会占用大量磁盘空间外（参见[关于docker image的那点事儿](http://topsli.github.io/2015/09/22/docker_image.html)），容器在运行时大量写日志也是个很头疼的问题。
 
 最近碰到一个问题，部分项目在容器疯狂打日志，把磁盘都弄满了，弄满的原因有以下两个
 
@@ -59,7 +59,7 @@ Docker 则通过 docker logs 命令向用户提供日志接口。`docker logs` �
 
 几个关键字
 
-1. xfs，[linux 文件系统](http://qiankunli.github.io/2018/05/19/linux_file_mount.html) CentOS 7开始，预设的文件系统由原来的EXT4变成了XFS文件系统
+1. xfs，[linux 文件系统](http://topsli.github.io/2018/05/19/linux_file_mount.html) CentOS 7开始，预设的文件系统由原来的EXT4变成了XFS文件系统
 2. pquota，也就是 project quotas ，[How to Enable Disk Quotas on an XFS File System](https://www.thegeekdiary.com/how-to-enable-disk-quotas-on-an-xfs-file-system/)XFS supports disk quotas by user, by group, and by project. Project disk quotas allow you to limit the amount of disk space on individual directory hierarchies. 限定一个目录的大小
 
         # mount 时 指定文件系统类型，使用-o enbale project quotas

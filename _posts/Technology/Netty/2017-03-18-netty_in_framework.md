@@ -47,8 +47,8 @@ keywords: JAVA netty pool
 
 或者说，**一个通用的通信分层框架是一个什么样的结构，而上述netty client demo代码如何分散或适配在这个框架中，这是一个很有意思的部分。**
 
-最近在学习zookeeper的源码，zk client的transport层提供java原生nio和netty两种实现。基于zk中netty使用方式的借鉴和自己的思考，我实现了一个基于netty的、通用的transport层框架，参见[qiankunli/pigeon
-](https://github.com/qiankunli/pigeon)
+最近在学习zookeeper的源码，zk client的transport层提供java原生nio和netty两种实现。基于zk中netty使用方式的借鉴和自己的思考，我实现了一个基于netty的、通用的transport层框架，参见[topsli/pigeon
+](https://github.com/topsli/pigeon)
 
 ## 定义netty transport层与上层的边界
 
@@ -94,8 +94,8 @@ zookeeper中采用“拉的方式”，但transport层并没有维护`<id，pack
 
 zk transport层提供了两种方案：nio和netty。即ClientCnxnSocket的两个实现类ClientCnxnSocketNIO和ClientCnxnSocketNetty。**netty比直接使用nio强的地方在于（或者说netty做了哪些工作）：**固化了线程模型与nio的结合方式，同时将编解码的过程、pipeline的思想融入处理过程中，使得“nio与线程结合”的方式，由"百家争鸣"（hadoop传文件块对nio的使用 VS zk对nio的使用）变成“独尊儒术”。
 
-zk client 实现中，netty收到数据后，只是简单的将字节流写入到zk自定义的缓冲区，并未将编解码过程融入到netty运行过程中。最开始我以为zk这样做的目的是nio和netty的实现共用一些逻辑(自己手动对自定义缓冲区数据做编解码)。在我自己实现[qiankunli/pigeon
-](https://github.com/qiankunli/pigeon)
+zk client 实现中，netty收到数据后，只是简单的将字节流写入到zk自定义的缓冲区，并未将编解码过程融入到netty运行过程中。最开始我以为zk这样做的目的是nio和netty的实现共用一些逻辑(自己手动对自定义缓冲区数据做编解码)。在我自己实现[topsli/pigeon
+](https://github.com/topsli/pigeon)
 的过程中，发现zk client的抽象接口是`ReplyHeader submitRequest(RequestHeader h, Record request,
                 Record response, WatchRegistration watchRegistration)`，response对象是事先创建好的。若套用了netty的编解码流程，response对象将由netty框架生成，再利用其为用户创建的response对象赋值，就多费了一番波折，并且不是很有必要。
                 
@@ -141,4 +141,4 @@ pushy 对netty的使用和zk有所不同
 
 对于服务端来说，能够支持的总连接数是有限的，如果一个客户端建立了大量的连接，将严重限制服务端可以服务的客户端数，因此服务端针对一个具体的客户端，要有一个连接数（主要是上限）管理。
 
-相关细节参见[通用transport层框架pigeon](http://qiankunli.github.io/2017/03/26/pigeon_design.html)
+相关细节参见[通用transport层框架pigeon](http://topsli.github.io/2017/03/26/pigeon_design.html)

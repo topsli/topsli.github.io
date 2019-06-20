@@ -43,7 +43,7 @@ Deployments are a newer and higher level concept than Replication Controllers. T
 
 [Deployments](https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/) A Deployment controller provides **declarative updates for Pods and ReplicaSets**.You describe a desired state in a Deployment object, and the Deployment controller changes the actual state to the desired state at a controlled rate. 
 
-[kubernetes yaml配置](http://qiankunli.github.io/2018/11/04/kubernetes_yaml.html)Every Kubernetes object includes two nested object fields that govern the object’s configuration: the object spec and the object status. 每个kubernetes object 都包括两个部分object spec  和 object status.  Deployment 只是在 ReplicaSet 的基础上，添加了 UP-TO-DATE 这个跟版本有关的状态字段（也就是说 spec 部分没改？）。
+[kubernetes yaml配置](http://topsli.github.io/2018/11/04/kubernetes_yaml.html)Every Kubernetes object includes two nested object fields that govern the object’s configuration: the object spec and the object status. 每个kubernetes object 都包括两个部分object spec  和 object status.  Deployment 只是在 ReplicaSet 的基础上，添加了 UP-TO-DATE 这个跟版本有关的状态字段（也就是说 spec 部分没改？）。
 
 
 我们对多个实例的应用（而不是单个实例）有以下操作：

@@ -82,7 +82,7 @@ When I understood that basically everything in Kubernetes works by watching etcd
 
 ### package结构
 
-[Go 常用的一些库](http://qiankunli.github.io/2015/05/31/go_library.html) 在介绍 [spf13/cobra](https://github.com/spf13/cobra)会提到 一个command line application 的推荐结构
+[Go 常用的一些库](http://topsli.github.io/2015/05/31/go_library.html) 在介绍 [spf13/cobra](https://github.com/spf13/cobra)会提到 一个command line application 的推荐结构
 
   	appName/
     	cmd/
@@ -114,7 +114,7 @@ When I understood that basically everything in Kubernetes works by watching etcd
 	* k8s 没有使用一个 类似Resources 的对象来聚合所有 resource
 	* 针对一个resource 的多个处理步骤，k8s 也没有为resource 提供download、sendHttp、downloadAndSendHttp 之类的方法，**而是通过对象的 聚合来 代替方法的顺序调用**。
 
-所以，k8s 采用了访问者 模式，利用其 **动态双分派** 特性，参见[函数式编程的设计模式](http://qiankunli.github.io/2018/12/15/functional_programming_patterns.html) 
+所以，k8s 采用了访问者 模式，利用其 **动态双分派** 特性，参见[函数式编程的设计模式](http://topsli.github.io/2018/12/15/functional_programming_patterns.html) 
 
 Visitor 接口
 

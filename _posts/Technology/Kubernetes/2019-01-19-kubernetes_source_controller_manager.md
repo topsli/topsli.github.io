@@ -14,7 +14,7 @@ keywords: kubernetes 源码分析
 {:toc}
 
 
-建议先看下前文 [Kubernetes源码分析——apiserver](http://qiankunli.github.io/2019/01/05/kubernetes_source_apiserver.html)
+建议先看下前文 [Kubernetes源码分析——apiserver](http://topsli.github.io/2019/01/05/kubernetes_source_apiserver.html)
 
 
 来自入口 `cmd/kube-controller-manager/controller-manager.go` 的概括
@@ -39,13 +39,13 @@ current state towards the desired state.
 
 ### Controller 与 apiserver 的交互方式
 
-[Kubernetes源码分析——apiserver](http://qiankunli.github.io/2019/01/05/kubernetes_source_apiserver.html) 提到Kubernetes CRD的实现，关于Custom Resource Controller的实现有一个很重要的点：Controller 与 apiserver 的交互方式——controller 与 apiserver 交互的部分已经被定好了，只需实现control loop 部分即可。
+[Kubernetes源码分析——apiserver](http://topsli.github.io/2019/01/05/kubernetes_source_apiserver.html) 提到Kubernetes CRD的实现，关于Custom Resource Controller的实现有一个很重要的点：Controller 与 apiserver 的交互方式——controller 与 apiserver 交互的部分已经被定好了，只需实现control loop 部分即可。
 
 ![](/public/upload/kubernetes/k8s_custom_controller.png)
 
 ### Kubernetes副本管理
 
-参见 [Kubernetes副本管理](http://qiankunli.github.io/2015/03/03/kubernetes_replica.html)
+参见 [Kubernetes副本管理](http://topsli.github.io/2015/03/03/kubernetes_replica.html)
 
 本文以Deployment Controller 为例来描述 Controller Manager的实现原理，因此要预先了解下 Deployment Controller 的实现原理。
 
@@ -69,7 +69,7 @@ current state towards the desired state.
 
 ## control loop
 
-[Kubernetes找感觉](http://qiankunli.github.io/2018/12/31/kubernetes_intro.html) 提到控制器的基本逻辑
+[Kubernetes找感觉](http://topsli.github.io/2018/12/31/kubernetes_intro.html) 提到控制器的基本逻辑
 
 	for {
 	  实际状态 := 获取集群中对象 X 的实际状态（Actual State）

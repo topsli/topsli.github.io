@@ -13,7 +13,7 @@ keywords: Docker
 
 背景材料
 
-[docker中涉及到的一些linux知识](http://qiankunli.github.io/2016/12/02/linux_docker.html)
+[docker中涉及到的一些linux知识](http://topsli.github.io/2016/12/02/linux_docker.html)
 
 ## 整体流程
 
@@ -123,7 +123,7 @@ linux 实际是通过 网络设备 去操作和使用网卡的，系统装了一
 
 
 eth0 在linux中 就是一个 struct device , 每一个struct device 都有一个irq（中断号）。网络数据到达，触发中断，执行网卡驱动程序，根据中断号找到 struct device，从下到上执行 网络协议栈 流程，参见[Linux网络源代码学习
-](http://qiankunli.github.io/2016/11/11/network_source.html)
+](http://topsli.github.io/2016/11/11/network_source.html)
 
 此处有几个基本抽象
 

@@ -16,7 +16,7 @@ keywords: kafka
     listOps.rightPush(random, new Person("Jane", "Smith"));
     List<Person> peopleOnSecondFloor = listOps.range("users:floor:2", 0, -1);
 
-背景 [Jedis源码分析](http://qiankunli.github.io/2016/06/07/jedis_source.html)
+背景 [Jedis源码分析](http://topsli.github.io/2016/06/07/jedis_source.html)
 
 ## spring-data-redis实现
 

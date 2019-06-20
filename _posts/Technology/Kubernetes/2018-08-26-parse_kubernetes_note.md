@@ -40,21 +40,21 @@ PaaS 主要是提供了一种名叫“应用托管”的能力。虚拟机技术
 
 
 1. 单从“测试/线上环境容器化” 来看，docker/mesos 也是够用的。
-2. 但从“测试/线上环境PaaS化”的角度看，打包发布不是全部，加上编排也不是。整个过程中，容器化只是手段。[当我在说PaaS时，我在说什么](http://qiankunli.github.io/2018/09/26/paas.html)
+2. 但从“测试/线上环境PaaS化”的角度看，打包发布不是全部，加上编排也不是。整个过程中，容器化只是手段。[当我在说PaaS时，我在说什么](http://topsli.github.io/2018/09/26/paas.html)
 
 java 是一个单机版的业务逻辑实现语言，但在微服务架构成为标配的今天，服务发现、日志监控报警、熔断等也成为必备组件（spring cloud 提供了完整的一套）。如果这些组件 都可以使用协议来定义，那么最后用不用java 来写业务逻辑就不是那么重要了。
 
 
 ## docker
 
-[docker中涉及到的一些linux知识](http://qiankunli.github.io/2016/12/02/linux_docker.html)
+[docker中涉及到的一些linux知识](http://topsli.github.io/2016/12/02/linux_docker.html)
 
 有哪些容器与虚拟机表现不一致的问题? 本质上还是共享内核带来的问题
 
 1. 很多资源无法隔离，也就是说隔离是不彻底的。比如宿主机的 时间，你设置为0时区，我设置为东八区，肯定乱套了
 2. 很多linux 命令依赖 /proc，比如top，而 容器内/proc 反应的是 宿主机的信息
 
-对于大多数开发者而言，他们对应用依赖的理解，一直局限在编程语言层面，比如golang的godeps.json。容器镜像 打包的不只是应用， 还有整个操作系统的文件和目录。这就意味着，应用以及它运行所需要的所有依赖，都被封装在了一起，进而成为“沙盒”的一部分。参见 [linux 文件系统](http://qiankunli.github.io/2018/05/19/linux_file_mount.html)
+对于大多数开发者而言，他们对应用依赖的理解，一直局限在编程语言层面，比如golang的godeps.json。容器镜像 打包的不只是应用， 还有整个操作系统的文件和目录。这就意味着，应用以及它运行所需要的所有依赖，都被封装在了一起，进而成为“沙盒”的一部分。参见 [linux 文件系统](http://topsli.github.io/2018/05/19/linux_file_mount.html)
 
 默认情况下，Docker 会为你提供一个隐含的ENTRYPOINT，即`/bin/sh -c`。所以在不指定ENTRYPOINT时，CMD的内容就是ENTRYPOINT 的参数。因此，一个不成文的约定是称docker 容器的启动进程为ENTRYPOINT 进程。
 
@@ -123,7 +123,7 @@ k8s 强在哪里
 
 	![](/public/upload/kubernetes/k8s_pod.PNG)
 
-声明式的好处 在[ansible学习](http://qiankunli.github.io/2018/12/29/ansible.html) ansible 与其它集群操作工具saltstack等的对比中也有体现。
+声明式的好处 在[ansible学习](http://topsli.github.io/2018/12/29/ansible.html) ansible 与其它集群操作工具saltstack等的对比中也有体现。
 
 kubernetes 真正的价值，在于提供了一套基于容器构建分布式系统的基础依赖。k8s提供了一种宏观抽象，作为一个集群操作系统，运行各种类型的应用。
 
@@ -144,13 +144,13 @@ kubelet 这个奇怪的名字，来自于Borg项目里的同源组件Borglet
 
 当应用本身发生变化时 开发和运维可以通过容器和镜像来进行同步。 当应用部署参数发生变化时，这些yaml 文件就是它们相互沟通和信任的媒介。
 
-关联内容参见 [在CoreOS集群上搭建Kubernetes](http://qiankunli.github.io/2015/01/29/Kubernetes_installation.html)
+关联内容参见 [在CoreOS集群上搭建Kubernetes](http://topsli.github.io/2015/01/29/Kubernetes_installation.html)
 
 ## kubernetes objects
 
 ![](/public/upload/kubernetes/parse_k8s_1.png)
 
-yaml配置参见[kubernetes yaml配置](http://qiankunli.github.io/2018/11/04/kubernetes_yaml.html) 
+yaml配置参见[kubernetes yaml配置](http://topsli.github.io/2018/11/04/kubernetes_yaml.html) 
 
 |现在|未来|
 |---|---|
@@ -163,11 +163,11 @@ yaml配置参见[kubernetes yaml配置](http://qiankunli.github.io/2018/11/04/ku
 
 ![](/public/upload/kubernetes/parse_k8s_skeleton.png)
 
-[Kubernetes controller 组件](http://qiankunli.github.io/2015/03/03/kubernetes_controller.html)
+[Kubernetes controller 组件](http://topsli.github.io/2015/03/03/kubernetes_controller.html)
 
 ## 小结
 
-[认知的几点规律](http://qiankunli.github.io/2018/11/05/cognition.html)任何知识体系都是分层的，k8s也不例外，理念 ==> 核心组件 apiserver,kuberlet,controler ==> pod、rs之类。Kubernetes 项目的成功，是成千上万云计算平台上的开发者用脚投票的结果。云计算平台上的开发者们所关心的，并不是调度，也不是资源管管理，更不是网络或者存储，他们关心的只有一件事，那就是 Kubernetes 的 API。也就是声明式 API 和控制器模式；这个 API 独有的编程范式，即 Controller 和 Operator。declarative API的内涵参见[Kubernetes源码分析——apiserver](http://qiankunli.github.io/2019/01/05/kubernetes_source_apiserver.html)
+[认知的几点规律](http://topsli.github.io/2018/11/05/cognition.html)任何知识体系都是分层的，k8s也不例外，理念 ==> 核心组件 apiserver,kuberlet,controler ==> pod、rs之类。Kubernetes 项目的成功，是成千上万云计算平台上的开发者用脚投票的结果。云计算平台上的开发者们所关心的，并不是调度，也不是资源管管理，更不是网络或者存储，他们关心的只有一件事，那就是 Kubernetes 的 API。也就是声明式 API 和控制器模式；这个 API 独有的编程范式，即 Controller 和 Operator。declarative API的内涵参见[Kubernetes源码分析——apiserver](http://topsli.github.io/2019/01/05/kubernetes_source_apiserver.html)
 
 
 Kubernetes 项目的本质其实只有一个，那就是“控制器模式”。这个思想，不仅仅是 Kubernetes 项目里每一个组件的“设计模板”，也是 Kubernetes 项目能够将开发者们紧紧团结到自己身边的重要原因。作为一个云计算平台的用户，能够用一个 YAML 文件表达我开发的应用的最终运行状态，并且自动地对我的应用进行运维和管理。**这种信赖关系，就是连接Kubernetes 项目和开发者们最重要的纽带。**

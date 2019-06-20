@@ -13,7 +13,7 @@ keywords: jib
 * TOC
 {:toc}
 
-阅读本文前，建议事先了解下 [jib源码分析及应用](http://qiankunli.github.io/2018/11/19/jib_source.html)
+阅读本文前，建议事先了解下 [jib源码分析及应用](http://topsli.github.io/2018/11/19/jib_source.html)
 
 ### 几个问题
 
@@ -22,7 +22,7 @@ keywords: jib
 1. jib 的最后，是不是也是调用 docker registry v2 api？ 比如对于golang语言 就有针对 registry api 的库 [github.com/heroku/docker-registry-client](https://github.com/heroku/docker-registry-client)
 3. jib maven plugin 与 jib-core 分工的边界在哪里？ 直接的代码调用，使用jib-core 即可
 1. 如何将不同的数据分layer
-2.  [jib源码分析及应用](http://qiankunli.github.io/2018/11/19/jib_source.html) 的分析只涉及到 jib 有限的几个package，还有大量package 分别是什么作用？
+2.  [jib源码分析及应用](http://topsli.github.io/2018/11/19/jib_source.html) 的分析只涉及到 jib 有限的几个package，还有大量package 分别是什么作用？
 3. Allocation 看着很复杂，是什么意思？
 4. TimerEventDispatcher 为什么有这个？
 5. guava Futures 的深意要好好理解
@@ -96,7 +96,7 @@ keywords: jib
 3. 真正的 event 源 聚合了EventDispatcher 而不是 实现它。
 3. 但万变不离其宗，从`new DefaultEventDispatcher(eventHandlers)`看， 还是通过 “Observer” 去构造“Subject”
 
-[函数式编程对设计模式的影响](http://qiankunli.github.io/2018/09/12/functional_programming.html)
+[函数式编程对设计模式的影响](http://topsli.github.io/2018/09/12/functional_programming.html)
 
 ## Allocation
 
@@ -133,9 +133,9 @@ newRoot 的创建入口在 StepsRunner 中
 
 加上非finalStep代码中 频频出现 progressAllocation ，可以做一个大胆假设：allocation 是用来跟踪进度的。
 
-如果看过[jib源码分析及应用](http://qiankunli.github.io/2018/11/19/jib_source.html) 中的Step 依赖关系图，并可以知道，感知一个并行的任务的进度是非常困难的。因为对Decentralized Allocation Tree 了解不多，本文不做过多涉及。
+如果看过[jib源码分析及应用](http://topsli.github.io/2018/11/19/jib_source.html) 中的Step 依赖关系图，并可以知道，感知一个并行的任务的进度是非常困难的。因为对Decentralized Allocation Tree 了解不多，本文不做过多涉及。
 
-通过学习jib 对 java future 有了一些新的体会，参见[future](http://qiankunli.github.io/2016/07/08/future.html)
+通过学习jib 对 java future 有了一些新的体会，参见[future](http://topsli.github.io/2016/07/08/future.html)
 
 ## 与docker registry 的交互
 
@@ -272,7 +272,7 @@ Cache 名为缓存，实际可以看做是 对象存储与检索，将对象数�
 
 ### jib本地镜像缓存与docker 本地镜像缓存的对比
 
-[关于docker image的那点事儿](http://qiankunli.github.io/2015/09/22/docker_image.html)  讲了
+[关于docker image的那点事儿](http://topsli.github.io/2015/09/22/docker_image.html)  讲了
 
 1. registry storage（也就是registry daemon/container） 磁盘上存储layer 的方式
 2. registry storage 也 docker local storage的对比
@@ -280,7 +280,7 @@ Cache 名为缓存，实际可以看做是 对象存储与检索，将对象数�
 
 ## container configuration blob
 
-参见 [关于docker image的那点事儿](http://qiankunli.github.io/2015/09/22/docker_image.html) 以及 [Image Manifest Version 2, Schema 1](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-1.md)
+参见 [关于docker image的那点事儿](http://topsli.github.io/2015/09/22/docker_image.html) 以及 [Image Manifest Version 2, Schema 1](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-1.md)
 
 个人微信订阅号
 

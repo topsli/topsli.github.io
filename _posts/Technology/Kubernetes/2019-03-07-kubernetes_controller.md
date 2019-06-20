@@ -29,7 +29,7 @@ keywords: kubernetes scheduler
 
 [kube-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/) **In applications of robotics and automation, a control loop is a non-terminating loop that regulates the state of the system**（在自动化行业是常见方式）. In Kubernetes, a controller is a control loop that watches the shared state of the cluster through the API server and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.
 
-docker是单机版的，当我们接触k8s时，天然的认为这是一个集群版的docker，再具体的说，就在在集群里给镜像找一个主机来运行容器。经过 [《深入剖析kubernetes》笔记](http://qiankunli.github.io/2018/08/26/parse_kubernetes_note.html)的学习，很明显不是这样。比调度更重要的是编排，那么编排如何实现呢？控制器
+docker是单机版的，当我们接触k8s时，天然的认为这是一个集群版的docker，再具体的说，就在在集群里给镜像找一个主机来运行容器。经过 [《深入剖析kubernetes》笔记](http://topsli.github.io/2018/08/26/parse_kubernetes_note.html)的学习，很明显不是这样。比调度更重要的是编排，那么编排如何实现呢？控制器
 
 ### 有什么
 
@@ -43,7 +43,7 @@ controller是一系列控制器的集合，不单指RC。
 	cronjob/                garbagecollector/       nodelifecycle/          replication/            statefulset/            daemon/
 	...
 
-**控制器是declarative API的重要组成部分**，declarative API的内涵参见[Kubernetes源码分析——apiserver](http://qiankunli.github.io/2019/01/05/kubernetes_source_apiserver.html)
+**控制器是declarative API的重要组成部分**，declarative API的内涵参见[Kubernetes源码分析——apiserver](http://topsli.github.io/2019/01/05/kubernetes_source_apiserver.html)
 
 ### 整体逻辑
 
